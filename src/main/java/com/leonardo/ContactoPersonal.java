@@ -4,13 +4,23 @@ public class ContactoPersonal {
 
   private String nombre;
   private String correo;
+  private Direccion direccion;
 
   public ContactoPersonal(String nombre, String correo) {
-    this.nombre = nombre;
-    this.correo = correo;
+    atributosComunes(nombre, correo);
+  }
+
+  public ContactoPersonal(String nombre, String correo, Direccion direccion) {
+    atributosComunes(nombre, correo);
+    this.direccion = direccion;
   }
 
   public ContactoPersonal() {
+  }
+
+  private void atributosComunes(String nombre, String correo) {
+    this.nombre = nombre;
+    this.correo = correo;
   }
 
   public void mostrarDatos() {
@@ -30,9 +40,19 @@ public class ContactoPersonal {
   }
 
   public void setCorreo(String correo) {
+    if (correo.equals(this.correo)) {
+      System.out.println("No se puede cambiar el mismo correo.");
+    }
     this.correo = correo;
   }
 
+  public Direccion getDireccion() {
+    return direccion;
+  }
+
+  public void setDireccion(Direccion direccion) {
+    this.direccion = direccion;
+  }
 
   @Override
   public String toString() {
