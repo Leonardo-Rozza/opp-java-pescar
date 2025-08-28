@@ -6,6 +6,7 @@ public class Test {
 
     ContactoPersonal cp1 = new ContactoPersonal();
     ContactoPersonal cp2 = new ContactoPersonal("Leo", "Leo@gmail.com");
+    ContactoPersonal cp3 = new ContactoPersonal("Roberto", "Roberto@gmail.com");
 
     // cp1.mostrarDatos();
 
